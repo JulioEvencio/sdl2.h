@@ -147,3 +147,90 @@ void sdl2_desenhar_textura(SDL_Renderer *tela, SDL_Texture *textura, int x, int 
     SDL_Rect desenho = {x, y, largura, altura};
     SDL_RenderCopy(tela, textura, NULL, &desenho);
 }
+
+/*  Funcoes TTF */
+//  Funcao que carrega uma fonte TTF
+TTF_Font* sdl2_carregar_fonte(char arquivo[], int tamanho)
+{
+    TTF_Font *fonte = NULL;
+    fonte = TTF_OpenFont(arquivo, tamanho);
+    if(fonte == NULL)
+    {
+        printf("Erro ao abrir arquivo: %s \n", TTF_GetError());
+    }
+    return fonte;
+}
+
+//  Funcao que exibi um texto solid
+void sdl2_exibir_texto_solid(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[], int x, int y, int largura, int altura, int r, int g, int b)
+{
+    SDL_Surface *texto = NULL;
+    SDL_Texture *texto_textura = NULL;
+    SDL_Color fonte_cor = {r, g, b};
+    texto = TTF_RenderText_Solid(fonte, mensagem, fonte_cor);
+    if(texto == NULL)
+    {
+        printf("erro ao gerar mensagem \n");
+    }
+    texto_textura = SDL_CreateTextureFromSurface(tela, texto);
+    if(texto_textura == NULL)
+    {
+        SDL_FreeSurface(texto);
+        texto = NULL;
+        printf("Erro ao gerar textura para texto \n");
+    }
+    SDL_Rect desenho = {x, y, largura, altura};
+    SDL_RenderCopy(tela, texto_textura, NULL, &desenho);
+}
+
+//  Funcao que exibi um texto shaded
+void sdl2_exibir_texto_shaded(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[], int x, int y, int largura, int altura, int r, int g, int b)
+{
+    SDL_Surface *texto = NULL;
+    SDL_Texture *texto_textura = NULL;
+    SDL_Color fonte_cor = {r, g, b};
+    SDL_Color fonte_fundo = {255, 255, 255};
+    texto = TTF_RenderText_Shaded(fonte, mensagem, fonte_cor, fonte_fundo);
+    if(texto == NULL)
+    {
+        printf("erro ao gerar mensagem \n");
+    }
+    texto_textura = SDL_CreateTextureFromSurface(tela, texto);
+    if(texto_textura == NULL)
+    {
+        SDL_FreeSurface(texto);
+        texto = NULL;
+        printf("Erro ao gerar textura para texto \n");
+    }
+    SDL_Rect desenho = {x, y, largura, altura};
+    SDL_RenderCopy(tela, texto_textura, NULL, &desenho);
+}
+
+//  Funcao que exibi um texto blended
+void sdl2_exibir_texto_blended(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[], int x, int y, int largura, int altura, int r, int g, int b)
+{
+    SDL_Surface *texto = NULL;
+    SDL_Texture *texto_textura = NULL;
+    SDL_Color fonte_cor = {r, g, b};
+    texto = TTF_RenderText_Blended(fonte, mensagem, fonte_cor);
+    if(texto == NULL)
+    {
+        printf("erro ao gerar mensagem \n");
+    }
+    texto_textura = SDL_CreateTextureFromSurface(tela, texto);
+    if(texto_textura == NULL)
+    {
+        SDL_FreeSurface(texto);
+        texto = NULL;
+        printf("Erro ao gerar textura para texto \n");
+    }
+    SDL_Rect desenho = {x, y, largura, altura};
+    SDL_RenderCopy(tela, texto_textura, NULL, &desenho);
+}
+
+//  Funcao que libera memoria das fontes
+void sdl2_fechar_fonte(TTF_Font *fonte)
+{
+    TTF_CloseFont(fonte);
+    fonte = NULL;
+}
