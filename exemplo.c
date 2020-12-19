@@ -35,7 +35,7 @@ int main(int argc, char *args[])
     zero = sdl2_carregar_textura(tela, "imagem/zero.png");
 
     //  Carregando 
-    fonte = sdl2_carregar_fonte("Sarai.ttf", 20);
+    fonte = sdl2_carregar_fonte("lazy.ttf", 20);
 
     //  Loop do programa
     int loop = 1;
