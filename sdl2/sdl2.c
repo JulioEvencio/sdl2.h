@@ -140,3 +140,10 @@ SDL_Texture* sdl2_carregar_textura(SDL_Renderer *tela, char arquivo[])
     imagem = NULL;
     return textura;
 }
+
+//  Funcao que desenha uma textura na tela
+void sdl2_desenhar_textura(SDL_Renderer *tela, SDL_Texture *textura, int x, int y, int largura, int altura)
+{
+    SDL_Rect desenho = {x, y, largura, altura};
+    SDL_RenderCopy(tela, textura, NULL, &desenho);
+}
