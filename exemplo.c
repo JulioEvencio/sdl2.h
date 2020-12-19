@@ -66,7 +66,7 @@ int main(int argc, char *args[])
 
         //  Exibindo texto
         sdl2_exibir_texto_solid(tela, fonte, "Solid...", 0, 0, 100, 50, PRETO);
-        sdl2_exibir_texto_shaded(tela, fonte, "Shaded...", 0, 51, 100, 50, PRETO);
+        sdl2_exibir_texto_shaded(tela, fonte, "Shaded...", 0, 51, 100, 50, PRETO, BRANCO);
         sdl2_exibir_texto_blended(tela, fonte, "Blended...", 0, 101, 100, 50, PRETO);
 
         //  Atualizando tela

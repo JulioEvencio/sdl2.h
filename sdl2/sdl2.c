@@ -169,12 +169,12 @@ void sdl2_exibir_texto_solid(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[
 }
 
 //  Funcao que exibi um texto shaded
-void sdl2_exibir_texto_shaded(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[], int x, int y, int largura, int altura, int r, int g, int b)
+void sdl2_exibir_texto_shaded(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[], int x, int y, int largura, int altura, int r, int g, int b, int R, int G, int B)
 {
     SDL_Surface *texto = NULL;
     SDL_Texture *texto_textura = NULL;
     SDL_Color fonte_cor = {r, g, b};
-    SDL_Color fonte_fundo = {255, 255, 255};
+    SDL_Color fonte_fundo = {R, G, B};
     texto = TTF_RenderText_Shaded(fonte, mensagem, fonte_cor, fonte_fundo);
     if(texto == NULL)
     {
