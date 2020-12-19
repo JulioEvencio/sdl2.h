@@ -106,3 +106,14 @@ void sdl2_fechar_tela(SDL_Renderer *tela)
     SDL_DestroyRenderer(tela);
     tela = NULL;
 }
+
+/*  Funcoes de desenhos geometricos */
+void sdl2_desenhar_retangulo(SDL_Renderer *tela, SDL_Rect retangulo, int x, int y, int largura, int altura, int r, int g, int b)
+{
+    SDL_SetRenderDrawColor(tela, r, g, b, 255);
+    retangulo.x = x;
+    retangulo.y = y;
+    retangulo.w = largura;
+    retangulo.h = altura;
+    SDL_RenderFillRect(tela, &retangulo);
+}

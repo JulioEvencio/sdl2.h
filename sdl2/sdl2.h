@@ -26,5 +26,7 @@ void sdl2_atualizar_tela(SDL_Renderer *tela);
 void sdl2_fechar_janela(SDL_Window *janela);
 void sdl2_fechar_tela(SDL_Renderer *tela);
 
+//  Funcoes de desenhos geometricos
+void sdl2_desenhar_retangulo(SDL_Renderer *tela, SDL_Rect retangulo, int x, int y, int largura, int altura, int r, int g, int b);
 
 #endif // SDL2_H_INCLUDED
