@@ -13,4 +13,9 @@
 #define VERDE 0,255,0
 #define AZUL 0,0,255
 
+/*  Funcoes */
+//  Inicializacao e finalizacao: SDL, IMG e TTF
+void sdl2_iniciar_SDL2(void);
+void sdl2_finalizar_SDL2(void);
+
 #endif // SDL2_H_INCLUDED
