@@ -117,3 +117,26 @@ void sdl2_desenhar_retangulo(SDL_Renderer *tela, SDL_Rect retangulo, int x, int 
     retangulo.h = altura;
     SDL_RenderFillRect(tela, &retangulo);
 }
+
+/*  Funcoes de arquivos .png */
+//  Funcao que carrega uma imagem .png e transforma em uma textura usavel
+SDL_Texture* sdl2_carregar_textura(SDL_Renderer *tela, char arquivo[])
+{
+    SDL_Surface *imagem = NULL;
+    SDL_Texture *textura = NULL;
+    imagem = IMG_Load(arquivo);
+    if(imagem == NULL)
+    {
+        printf("Erro ao abrir arquivo: %s \n", IMG_GetError());
+        return textura;
+    }
+    textura = SDL_CreateTextureFromSurface(tela, imagem);
+    if(textura == NULL)
+    {
+        printf("Erro ao criar textura \n");
+        return textura;
+    }
+    SDL_FreeSurface(imagem);
+    imagem = NULL;
+    return textura;
+}
