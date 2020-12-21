@@ -10,8 +10,17 @@
 #define BRANCO 255,255,255
 #define PRETO 0,0,0
 #define VERMELHO 255,0,0
-#define VERDE 0,255,0
+#define VERDE 0,128,0
 #define AZUL 0,0,255
+#define CINZA 128,128,128
+#define CIANO 0,255,255
+#define LIMAO 0,255,0
+#define MARROM 139,69,19
+#define ROXO 128,0,128
+#define MAGENTA 139,0,139
+#define ROSA 255,20,147
+#define LARANJA 255,165,0
+#define AMARELO 255,255,0
 
 /*  Funcoes */
 //  Inicializacao e finalizacao: SDL, IMG e TTF
