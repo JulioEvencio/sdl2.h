@@ -7,12 +7,12 @@
 //  Funcao que iniciar: SDL, IMG e TTF
 void sdl2_iniciar_SDL2(void)
 {
-    if(SDL_Init(SDL_INIT_VIDEO) < 0)
+    if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
     {
         printf("Erro ao iniciar SDL: %s \n", SDL_GetError());
         exit(1);
     }
-    if(IMG_Init(IMG_INIT_PNG) < 0)
+    if(IMG_Init(IMG_INIT_PNG|IMG_INIT_JPG) < 0)
     {
         SDL_Quit();
         printf("Erro ao iniciar IMG: %s \n", IMG_GetError());

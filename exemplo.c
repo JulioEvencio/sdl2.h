@@ -56,7 +56,7 @@ int main(int argc, char *args[])
 
         /*  Grafico */
         //  Cor da tela
-        sdl2_definir_cor_tela(tela, VERMELHO);
+        sdl2_limpar_tela(tela, VERMELHO);
 
         //  Desenhando retangulo
         sdl2_desenhar_retangulo(tela, retangulo, 200, 200, 50, 100, VERDE);
