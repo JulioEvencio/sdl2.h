@@ -21,7 +21,7 @@ void sdl2_finalizar_SDL2(void);
 //  Funcoes da janela e tela
 SDL_Window* sdl2_criar_janela(char nome[], int largura, int altura);
 SDL_Renderer* sdl2_criar_tela(SDL_Window *janela);
-void sdl2_definir_cor_tela(SDL_Renderer *tela, int r, int g, int b);
+void sdl2_limpar_tela(SDL_Renderer *tela, int r, int g, int b);
 void sdl2_atualizar_tela(SDL_Renderer *tela);
 void sdl2_fechar_janela(SDL_Window *janela);
 void sdl2_fechar_tela(SDL_Renderer *tela);

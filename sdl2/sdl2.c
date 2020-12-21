@@ -66,7 +66,7 @@ SDL_Renderer* sdl2_criar_tela(SDL_Window *janela)
 }
 
 //  Funcao que define a cor de uma tela
-void sdl2_definir_cor_tela(SDL_Renderer *tela, int r, int g, int b)
+void sdl2_limpar_tela(SDL_Renderer *tela, int r, int g, int b)
 {
     SDL_SetRenderDrawColor(tela, r, g, b, 255);
     SDL_RenderClear(tela);
