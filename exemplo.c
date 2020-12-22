@@ -27,15 +27,41 @@ int main(int argc, char *args[])
 
     //  Criando uma janela
     janela = sdl2_criar_janela("Meu head sdl2", 640, 480);
+    if(janela == NULL)
+    {
+        sdl2_finalizar_SDL2();
+        exit(1);
+    }
 
     //  Criando uma tela para a janela
     tela = sdl2_criar_tela(janela);
+    if(tela == NULL)
+    {
+        sdl2_fechar_janela(janela);
+        sdl2_finalizar_SDL2();
+        exit(1);
+    }
 
     //  Carregando textura
     zero = sdl2_carregar_textura(tela, "imagem/zero.png");
+    if(zero == NULL)
+    {
+        sdl2_fechar_tela(tela);
+        sdl2_fechar_janela(janela);
+        sdl2_finalizar_SDL2();
+        exit(1);
+    }
 
     //  Carregando 
     fonte = sdl2_carregar_fonte("lazy.ttf", 20);
+    if(fonte == NULL)
+    {
+        sdl2_fechar_textura(zero);
+        sdl2_fechar_tela(tela);
+        sdl2_fechar_janela(janela);
+        sdl2_finalizar_SDL2();
+        exit(1);
+    }
 
     //  Loop do programa
     int loop = 1;
@@ -73,7 +99,7 @@ int main(int argc, char *args[])
         sdl2_atualizar_tela(tela);
 
         /*  Delay */
-        SDL_Delay(1000/60);
+        SDL_Delay(10);
     }
 
     /*  Encerrando programa */
