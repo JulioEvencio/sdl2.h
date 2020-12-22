@@ -56,18 +56,18 @@ int main(int argc, char *args[])
 
         /*  Grafico */
         //  Cor da tela
-        sdl2_limpar_tela(tela, VERMELHO);
+        sdl2_limpar_tela(tela, SDL2_VERMELHO);
 
         //  Desenhando retangulo
-        sdl2_desenhar_retangulo(tela, retangulo, 200, 200, 50, 100, VERDE);
+        sdl2_desenhar_retangulo(tela, retangulo, 200, 200, 50, 100, SDL2_VERDE);
 
         //  Desenhando uma textura na tela
         sdl2_desenhar_textura(tela, zero, 300, 300, 50, 50);
 
         //  Exibindo texto
-        sdl2_exibir_texto_solid(tela, fonte, "Solid...", 0, 0, 100, 50, PRETO);
-        sdl2_exibir_texto_shaded(tela, fonte, "Shaded...", 0, 51, 100, 50, PRETO, BRANCO);
-        sdl2_exibir_texto_blended(tela, fonte, "Blended...", 0, 101, 100, 50, PRETO);
+        sdl2_exibir_texto_solid(tela, fonte, "Solid...", 0, 0, 100, 50, SDL2_PRETO);
+        sdl2_exibir_texto_shaded(tela, fonte, "Shaded...", 0, 51, 100, 50, SDL2_PRETO, SDL2_BRANCO);
+        sdl2_exibir_texto_blended(tela, fonte, "Blended...", 0, 101, 100, 50, SDL2_PRETO);
 
         //  Atualizando tela
         sdl2_atualizar_tela(tela);
