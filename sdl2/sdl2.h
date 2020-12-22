@@ -41,6 +41,7 @@ void sdl2_desenhar_retangulo(SDL_Renderer *tela, SDL_Rect retangulo, int x, int 
 //  Funcoes de arquivos .png
 SDL_Texture* sdl2_carregar_textura(SDL_Renderer *tela, char arquivo[]);
 void sdl2_desenhar_textura(SDL_Renderer *tela, SDL_Texture *textura, int x, int y, int largura, int altura);
+void sdl2_fechar_textura(SDL_Texture *textura);
 
 //  Funcoes TTF
 TTF_Font* sdl2_carregar_fonte(char arquivo[], int tamanho);

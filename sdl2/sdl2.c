@@ -65,7 +65,7 @@ SDL_Renderer* sdl2_criar_tela(SDL_Window *janela)
     return tela;
 }
 
-//  Funcao que define a cor de uma tela
+//  Funcao que limpa a tela com uma cor especifica
 void sdl2_limpar_tela(SDL_Renderer *tela, int r, int g, int b)
 {
     SDL_SetRenderDrawColor(tela, r, g, b, 255);
@@ -78,18 +78,18 @@ void sdl2_atualizar_tela(SDL_Renderer *tela)
     SDL_RenderPresent(tela);
 }
 
-//  Funcao que libera memoria de uma janela
-void sdl2_fechar_janela(SDL_Window *janela)
-{
-    SDL_DestroyWindow(janela);
-    janela = NULL;
-}
-
 //  Funcao que libera memoria de uma tela
 void sdl2_fechar_tela(SDL_Renderer *tela)
 {
     SDL_DestroyRenderer(tela);
     tela = NULL;
+}
+
+//  Funcao que libera memoria de uma janela
+void sdl2_fechar_janela(SDL_Window *janela)
+{
+    SDL_DestroyWindow(janela);
+    janela = NULL;
 }
 
 /*  Funcoes de desenhos geometricos */
@@ -132,6 +132,13 @@ void sdl2_desenhar_textura(SDL_Renderer *tela, SDL_Texture *textura, int x, int 
 {
     SDL_Rect desenho = {x, y, largura, altura};
     SDL_RenderCopy(tela, textura, NULL, &desenho);
+}
+
+//  Funcao que libera memoria de uma textura
+void sdl2_fechar_textura(SDL_Texture *textura)
+{
+    SDL_DestroyTexture(textura);
+    textura = NULL;
 }
 
 /*  Funcoes TTF */

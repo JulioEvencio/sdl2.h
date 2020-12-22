@@ -79,9 +79,11 @@ int main(int argc, char *args[])
     /*  Encerrando programa */
     //  Fechando fontes
     sdl2_fechar_fonte(fonte);
-    //  Fechando janelas
-    sdl2_fechar_janela(janela);
+    //  Fechando textura
+    sdl2_fechar_textura(zero);
+    //  Fechando janela e tela
     sdl2_fechar_tela(tela);
+    sdl2_fechar_janela(janela);
     //  Finalizando SDL, IMG e TTF
     sdl2_finalizar_SDL2();
 
