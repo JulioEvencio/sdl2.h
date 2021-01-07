@@ -9,20 +9,20 @@ void sdl2_iniciar_SDL2(void)
 {
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
     {
-        printf("Erro ao iniciar SDL: %s \n", SDL_GetError());
+        puts(SDL_GetError());
         exit(1);
     }
     if(IMG_Init(IMG_INIT_PNG|IMG_INIT_JPG) < 0)
     {
         SDL_Quit();
-        printf("Erro ao iniciar IMG: %s \n", IMG_GetError());
+        puts(IMG_GetError());
         exit(1);
     }
     if(TTF_Init() < 0)
     {
         IMG_Quit();
         SDL_Quit();
-        printf("Erro ao iniciar TTF: %s \n", TTF_GetError());
+        puts(TTF_GetError());
         exit(1);
     }
 }
@@ -43,7 +43,7 @@ SDL_Window* sdl2_criar_janela(char nome[], int largura, int altura)
     janela = SDL_CreateWindow(nome, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, largura, altura, SDL_WINDOW_SHOWN);
     if(janela == NULL)
     {
-        printf("Erro ao criar janela: %s \n", SDL_GetError());;
+        puts(SDL_GetError());
     }
     return janela;
 }
@@ -55,7 +55,7 @@ SDL_Renderer* sdl2_criar_tela(SDL_Window *janela)
     tela = SDL_CreateRenderer(janela, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if(tela == NULL)
     {
-        printf("Erro ao criar tela: %s \n", SDL_GetError());
+        puts(SDL_GetError());
     }
     return tela;
 }
@@ -108,13 +108,13 @@ SDL_Texture* sdl2_carregar_textura(SDL_Renderer *tela, char arquivo[])
     imagem = IMG_Load(arquivo);
     if(imagem == NULL)
     {
-        printf("Erro ao abrir arquivo: %s \n", IMG_GetError());
+        puts(IMG_GetError());
         return textura;
     }
     textura = SDL_CreateTextureFromSurface(tela, imagem);
     if(textura == NULL)
     {
-        printf("Erro ao criar textura: %s \n", SDL_GetError());
+        puts(SDL_GetError());
     }
     SDL_FreeSurface(imagem);
     imagem = NULL;
@@ -143,7 +143,7 @@ TTF_Font* sdl2_carregar_fonte(char arquivo[], int tamanho)
     fonte = TTF_OpenFont(arquivo, tamanho);
     if(fonte == NULL)
     {
-        printf("Erro ao abrir arquivo: %s \n", TTF_GetError());
+        puts(TTF_GetError());
     }
     return fonte;
 }
@@ -157,7 +157,7 @@ int sdl2_exibir_texto_solid(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[]
     texto = TTF_RenderText_Solid(fonte, mensagem, fonte_cor);
     if(texto == NULL)
     {
-        printf("erro ao gerar mensagem: %s \n", TTF_GetError());
+        puts(TTF_GetError());
         return 0;
     }
     texto_textura = SDL_CreateTextureFromSurface(tela, texto);
@@ -165,7 +165,7 @@ int sdl2_exibir_texto_solid(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[]
     {
         SDL_FreeSurface(texto);
         texto = NULL;
-        printf("Erro ao gerar textura para texto: %s \n", SDL_GetError());
+        puts(SDL_GetError());
         return 0;
     }
     SDL_Rect desenho = {x, y, largura, altura};
@@ -186,7 +186,7 @@ int sdl2_exibir_texto_shaded(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[
     texto = TTF_RenderText_Shaded(fonte, mensagem, fonte_cor, fonte_fundo);
     if(texto == NULL)
     {
-        printf("erro ao gerar mensagem: %s \n", TTF_GetError());
+        puts(TTF_GetError());
         return 0;
     }
     texto_textura = SDL_CreateTextureFromSurface(tela, texto);
@@ -194,7 +194,7 @@ int sdl2_exibir_texto_shaded(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[
     {
         SDL_FreeSurface(texto);
         texto = NULL;
-        printf("Erro ao gerar textura para texto: %s \n", SDL_GetError());
+        puts(SDL_GetError());
         return 0;
     }
     SDL_Rect desenho = {x, y, largura, altura};
@@ -214,7 +214,7 @@ int sdl2_exibir_texto_blended(SDL_Renderer *tela, TTF_Font *fonte, char mensagem
     texto = TTF_RenderText_Blended(fonte, mensagem, fonte_cor);
     if(texto == NULL)
     {
-        printf("erro ao gerar mensagem: %s \n", TTF_GetError());
+        puts(TTF_GetError());
         return 0;
     }
     texto_textura = SDL_CreateTextureFromSurface(tela, texto);
@@ -222,7 +222,7 @@ int sdl2_exibir_texto_blended(SDL_Renderer *tela, TTF_Font *fonte, char mensagem
     {
         SDL_FreeSurface(texto);
         texto = NULL;
-        printf("Erro ao gerar textura para texto: %s \n", SDL_GetError());
+        puts(SDL_GetError());
         return 0;
     }
     SDL_Rect desenho = {x, y, largura, altura};
