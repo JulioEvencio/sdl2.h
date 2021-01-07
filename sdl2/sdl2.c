@@ -158,7 +158,7 @@ int sdl2_exibir_texto_solid(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[]
     if(texto == NULL)
     {
         puts(TTF_GetError());
-        return 0;
+        return 1;
     }
     texto_textura = SDL_CreateTextureFromSurface(tela, texto);
     if(texto_textura == NULL)
@@ -166,14 +166,14 @@ int sdl2_exibir_texto_solid(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[]
         SDL_FreeSurface(texto);
         texto = NULL;
         puts(SDL_GetError());
-        return 0;
+        return 1;
     }
     SDL_Rect desenho = {x, y, largura, altura};
     SDL_RenderCopy(tela, texto_textura, NULL, &desenho);
     SDL_FreeSurface(texto);
     texto = NULL;
     sdl2_fechar_textura(texto_textura);
-    return 1;
+    return 0;
 }
 
 //  Funcao que exibi um texto shaded
@@ -187,7 +187,7 @@ int sdl2_exibir_texto_shaded(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[
     if(texto == NULL)
     {
         puts(TTF_GetError());
-        return 0;
+        return 1;
     }
     texto_textura = SDL_CreateTextureFromSurface(tela, texto);
     if(texto_textura == NULL)
@@ -195,14 +195,14 @@ int sdl2_exibir_texto_shaded(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[
         SDL_FreeSurface(texto);
         texto = NULL;
         puts(SDL_GetError());
-        return 0;
+        return 1;
     }
     SDL_Rect desenho = {x, y, largura, altura};
     SDL_RenderCopy(tela, texto_textura, NULL, &desenho);
     SDL_FreeSurface(texto);
     texto = NULL;
     sdl2_fechar_textura(texto_textura);
-    return 1;
+    return 0;
 }
 
 //  Funcao que exibi um texto blended
@@ -215,7 +215,7 @@ int sdl2_exibir_texto_blended(SDL_Renderer *tela, TTF_Font *fonte, char mensagem
     if(texto == NULL)
     {
         puts(TTF_GetError());
-        return 0;
+        return 1;
     }
     texto_textura = SDL_CreateTextureFromSurface(tela, texto);
     if(texto_textura == NULL)
@@ -223,14 +223,14 @@ int sdl2_exibir_texto_blended(SDL_Renderer *tela, TTF_Font *fonte, char mensagem
         SDL_FreeSurface(texto);
         texto = NULL;
         puts(SDL_GetError());
-        return 0;
+        return 1;
     }
     SDL_Rect desenho = {x, y, largura, altura};
     SDL_RenderCopy(tela, texto_textura, NULL, &desenho);
     SDL_FreeSurface(texto);
     texto = NULL;
     sdl2_fechar_textura(texto_textura);
-    return 1;
+    return 0;
 }
 
 //  Funcao que libera memoria das fontes
