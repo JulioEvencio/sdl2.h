@@ -53,7 +53,7 @@ int main(int argc, char *args[])
     }
 
     //  Carregando 
-    fonte = sdl2_carregar_fonte("lazy.ttf", 20);
+    fonte = sdl2_carregar_fonte("arial.ttf", 20);
     if(fonte == NULL)
     {
         sdl2_fechar_textura(zero);
