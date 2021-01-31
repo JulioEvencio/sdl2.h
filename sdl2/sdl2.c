@@ -89,8 +89,9 @@ void sdl2_fechar_janela(SDL_Window *janela)
 
 /*  Funcoes de desenhos geometricos */
 //  Funcao que desenha um retangulo na tela
-void sdl2_desenhar_retangulo(SDL_Renderer *tela, SDL_Rect retangulo, int x, int y, int largura, int altura, int r, int g, int b)
+void sdl2_desenhar_retangulo(SDL_Renderer *tela, int x, int y, int largura, int altura, int r, int g, int b)
 {
+    SDL_Rect retangulo;
     SDL_SetRenderDrawColor(tela, r, g, b, 255);
     retangulo.x = x;
     retangulo.y = y;

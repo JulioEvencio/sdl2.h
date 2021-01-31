@@ -36,7 +36,7 @@ void sdl2_fechar_janela(SDL_Window *janela);
 void sdl2_fechar_tela(SDL_Renderer *tela);
 
 //  Funcoes de desenhos geometricos
-void sdl2_desenhar_retangulo(SDL_Renderer *tela, SDL_Rect retangulo, int x, int y, int largura, int altura, int r, int g, int b);
+void sdl2_desenhar_retangulo(SDL_Renderer *tela, int x, int y, int largura, int altura, int r, int g, int b);
 
 //  Funcoes de arquivos .png
 SDL_Texture* sdl2_carregar_textura(SDL_Renderer *tela, char arquivo[]);
