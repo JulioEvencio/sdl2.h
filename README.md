@@ -1,4 +1,4 @@
-# sdl2.h wiki
+# sdl2.h
 
 Esta é a documentação do meu arquivo de cabeçalho `sdl2.h`. Este arquivo serve para facilitar o uso das funções da biblioteca SDL 2, SDL image e SDL ttf.
 É necessário ter o SDL2, SDL2_image e SDL2_ttf instalado para usar este arquivo de cabeçalho. Use os seguintes comandos na hora de compilar:
