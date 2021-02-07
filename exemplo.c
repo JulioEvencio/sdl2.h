@@ -13,8 +13,6 @@ int main(int argc, char *args[])
     //  Janela
     SDL_Window *janela = NULL;
     SDL_Renderer *tela = NULL;
-    //  Formas geometricas
-    SDL_Rect retangulo;
     //  Imagem
     SDL_Texture *zero = NULL;
     //  Texto
@@ -85,7 +83,7 @@ int main(int argc, char *args[])
         sdl2_limpar_tela(tela, SDL2_VERMELHO);
 
         //  Desenhando retangulo
-        sdl2_desenhar_retangulo(tela, retangulo, 200, 200, 50, 100, SDL2_VERDE);
+        sdl2_desenhar_retangulo(tela, 200, 200, 50, 100, SDL2_VERDE);
 
         //  Desenhando uma textura na tela
         sdl2_desenhar_textura(tela, zero, 300, 300, 50, 50);

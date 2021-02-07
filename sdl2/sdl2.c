@@ -37,7 +37,7 @@ void sdl2_finalizar_SDL2(void)
 
 /*  Funcoes da janela e tela */
 //  Funcao que cria uma janela
-SDL_Window* sdl2_criar_janela(char nome[], int largura, int altura)
+SDL_Window* sdl2_criar_janela(char *nome, int largura, int altura)
 {
     SDL_Window *janela = NULL;
     janela = SDL_CreateWindow(nome, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, largura, altura, SDL_WINDOW_SHOWN);
@@ -102,7 +102,7 @@ void sdl2_desenhar_retangulo(SDL_Renderer *tela, int x, int y, int largura, int 
 
 /*  Funcoes de arquivos .png e .jpg */
 //  Funcao que carrega uma imagem .png/.jpg e transforma em uma textura usavel
-SDL_Texture* sdl2_carregar_textura(SDL_Renderer *tela, char arquivo[])
+SDL_Texture* sdl2_carregar_textura(SDL_Renderer *tela, char *arquivo)
 {
     SDL_Surface *imagem = NULL;
     SDL_Texture *textura = NULL;
@@ -138,7 +138,7 @@ void sdl2_fechar_textura(SDL_Texture *textura)
 
 /*  Funcoes TTF */
 //  Funcao que carrega uma fonte TTF
-TTF_Font* sdl2_carregar_fonte(char arquivo[], int tamanho)
+TTF_Font* sdl2_carregar_fonte(char *arquivo, int tamanho)
 {
     TTF_Font *fonte = NULL;
     fonte = TTF_OpenFont(arquivo, tamanho);
@@ -150,7 +150,7 @@ TTF_Font* sdl2_carregar_fonte(char arquivo[], int tamanho)
 }
 
 //  Funcao que exibi um texto solid
-int sdl2_exibir_texto_solid(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[], int x, int y, int largura, int altura, int r, int g, int b)
+int sdl2_exibir_texto_solid(SDL_Renderer *tela, TTF_Font *fonte, char *mensagem, int x, int y, int largura, int altura, int r, int g, int b)
 {
     SDL_Surface *texto = NULL;
     SDL_Texture *texto_textura = NULL;
@@ -178,7 +178,7 @@ int sdl2_exibir_texto_solid(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[]
 }
 
 //  Funcao que exibi um texto shaded
-int sdl2_exibir_texto_shaded(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[], int x, int y, int largura, int altura, int r, int g, int b, int R, int G, int B)
+int sdl2_exibir_texto_shaded(SDL_Renderer *tela, TTF_Font *fonte, char *mensagem, int x, int y, int largura, int altura, int r, int g, int b, int R, int G, int B)
 {
     SDL_Surface *texto = NULL;
     SDL_Texture *texto_textura = NULL;
@@ -207,7 +207,7 @@ int sdl2_exibir_texto_shaded(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[
 }
 
 //  Funcao que exibi um texto blended
-int sdl2_exibir_texto_blended(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[], int x, int y, int largura, int altura, int r, int g, int b)
+int sdl2_exibir_texto_blended(SDL_Renderer *tela, TTF_Font *fonte, char *mensagem, int x, int y, int largura, int altura, int r, int g, int b)
 {
     SDL_Surface *texto = NULL;
     SDL_Texture *texto_textura = NULL;

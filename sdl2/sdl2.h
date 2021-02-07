@@ -28,7 +28,7 @@ void sdl2_iniciar_SDL2(void);
 void sdl2_finalizar_SDL2(void);
 
 //  Funcoes da janela e tela
-SDL_Window* sdl2_criar_janela(char nome[], int largura, int altura);
+SDL_Window* sdl2_criar_janela(char *nome, int largura, int altura);
 SDL_Renderer* sdl2_criar_tela(SDL_Window *janela);
 void sdl2_limpar_tela(SDL_Renderer *tela, int r, int g, int b);
 void sdl2_atualizar_tela(SDL_Renderer *tela);
@@ -38,16 +38,16 @@ void sdl2_fechar_tela(SDL_Renderer *tela);
 //  Funcoes de desenhos geometricos
 void sdl2_desenhar_retangulo(SDL_Renderer *tela, int x, int y, int largura, int altura, int r, int g, int b);
 
-//  Funcoes de arquivos .png
-SDL_Texture* sdl2_carregar_textura(SDL_Renderer *tela, char arquivo[]);
+//  Funcoes de arquivos .png e .jpg
+SDL_Texture* sdl2_carregar_textura(SDL_Renderer *tela, char *arquivo);
 void sdl2_desenhar_textura(SDL_Renderer *tela, SDL_Texture *textura, int x, int y, int largura, int altura);
 void sdl2_fechar_textura(SDL_Texture *textura);
 
 //  Funcoes TTF
-TTF_Font* sdl2_carregar_fonte(char arquivo[], int tamanho);
-int sdl2_exibir_texto_solid(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[], int x, int y, int largura, int altura, int r, int g, int b);
-int sdl2_exibir_texto_shaded(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[], int x, int y, int largura, int altura, int r, int g, int b, int R, int G, int B);
-int sdl2_exibir_texto_blended(SDL_Renderer *tela, TTF_Font *fonte, char mensagem[], int x, int y, int largura, int altura, int r, int g, int b);
+TTF_Font* sdl2_carregar_fonte(char *arquivo, int tamanho);
+int sdl2_exibir_texto_solid(SDL_Renderer *tela, TTF_Font *fonte, char *mensagem, int x, int y, int largura, int altura, int r, int g, int b);
+int sdl2_exibir_texto_shaded(SDL_Renderer *tela, TTF_Font *fonte, char *mensagem, int x, int y, int largura, int altura, int r, int g, int b, int R, int G, int B);
+int sdl2_exibir_texto_blended(SDL_Renderer *tela, TTF_Font *fonte, char *mensagem, int x, int y, int largura, int altura, int r, int g, int b);
 void sdl2_fechar_fonte(TTF_Font *fonte);
 
 #endif // SDL2_H_INCLUDED
