@@ -31,10 +31,10 @@ enum SDL2_Erro
 
 /* Inicializacao e finalizacao: SDL, IMG e TTF */
 int sdl2_iniciar(void);
-int sdl2_finalizar(void);
+void sdl2_finalizar(void);
 
 /* Funcoes da janela e tela */
-SDL_Window* sdl2_criar_janela(char *nome, int largura, int altura);
+int sdl2_criar_janela(SDL_Window **janela, SDL_Renderer **tela_renderizada, char *nome, int largura, int altura);
 void sdl2_limpar_tela(SDL_Renderer *tela, int r, int g, int b);
 void sdl2_atualizar_tela(SDL_Renderer *tela);
 void sdl2_fechar_janela(SDL_Window *janela, SDL_Renderer *tela_renderizada);
